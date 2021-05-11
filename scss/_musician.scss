@@ -1,0 +1,625 @@
+.musician {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 70px;
+    input {
+        display: none;
+    }
+    h1 {
+        color: #1a1a1a;
+        font-family: "Montserrat", sans-serif;
+        font-size: px-to-rem(32);
+        font-weight: 500;
+        line-height: 60px;
+        max-width: 630px;
+        margin-bottom: 46px;
+    }
+    &__link-more {
+        color: #d21810;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        max-width: 1200px;
+        margin: auto;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 100px;
+    }
+    &__text {
+        &-slider {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &-hide {
+            height: 2555px;
+            overflow: hidden;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 150px;
+                width: 100%;
+                background-image: linear-gradient(to top, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+        img {
+            margin-bottom: 70px;
+        }
+        p {
+            color: #4d4d4d;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(16);
+            font-weight: 400;
+            line-height: 24px;
+            max-width: 780px;
+            margin-bottom: 30px;
+        }
+        h3 {
+            color: #191919;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(24);
+            font-weight: 500;
+            line-height: 24px;
+            max-width: 780px;
+            margin-bottom: 40px;
+            margin-top: 70px;
+        }
+        ol,
+        ul {
+            list-style-type: none;
+            margin-bottom: 44px;
+            li {
+                color: #4d4d4d;
+                font-family: "Montserrat", sans-serif;
+                font-size: px-to-rem(18);
+                font-weight: 500;
+                line-height: 24px;
+                margin-bottom: 20px;
+                span {
+                    margin-right: 20px;
+                }
+            }
+        }
+        ol {
+            counter-reset: num;
+            li {
+                &::before {
+                    content: counter(num);
+                    counter-increment: num;
+                    margin-right: 20px;
+                }
+            }
+        }
+        ul {
+            li {
+                &::before {
+                    content: "⬥";
+                    color: #999999;
+                    margin-right: 15px;
+                }
+            }
+        }
+        &-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 70px;
+            p {
+                max-width: 480px;
+            }
+            img {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__btn-more {
+        color: #d21810;
+        font-family: "Montserrat", sans-serif;
+        font-size: px-to-rem(14);
+        font-weight: 500;
+        text-transform: uppercase;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    &__filter-res {
+        display: none;
+    }
+    &__tabs {
+        display: flex;
+        list-style-type: none;
+        margin-left: 40px;
+        margin-bottom: 100px;
+        & li {
+            & .musician__tabs-label {
+                color: #000000;
+                font-family: "Montserrat", sans-serif;
+                font-size: px-to-rem(14);
+                font-weight: 500;
+                text-transform: uppercase;
+                width: 154px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: url("../img/photo-nact.png") no-repeat;
+                margin-right: 20px;
+                background-size: 100% 100%;
+                cursor: pointer;
+                &-active {
+                    color: #ffffff;
+                    background: url("../img/photo-act.png") no-repeat;
+                }
+            }
+        }
+    }
+    &__body {
+        margin-left: 40px;
+        display: none;
+        margin-bottom: 160px;
+        &-filter {
+            margin-bottom: 75px;
+            &-letter {
+                display: flex;
+                button {
+                    color: #494949;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: px-to-rem(18);
+                    font-weight: 400;
+                    border: none;
+                    background: none;
+                    margin-right: 15px;
+                    cursor: pointer;
+                    height: 22px;
+                    &:last-child {
+                        color: #000000;
+                        font-family: "Montserrat", sans-serif;
+                        font-size: px-to-rem(14);
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        margin-left: 50px;
+                    }
+                }
+                label {
+                    color: #494949;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: px-to-rem(18);
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+                input {
+                    display: none;
+                }
+                input:checked + label {
+                    color: #d21810;
+                }
+            }
+            &-genre {
+                display: flex;
+                flex-wrap: wrap;
+                max-width: 700px;
+                label {
+                    color: #494949;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: px-to-rem(14);
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    margin-top: 20px;
+                    position: relative;
+                    margin-right: 30px;
+                    &::before {
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        border: 1px solid #494949;
+                        display: block;
+                        margin-right: 10px;
+                        border-radius: 100px;
+                    }
+                }
+                & input:checked + label::after {
+                    content: "";
+                    width: 12px;
+                    height: 12px;
+                    display: block;
+                    position: absolute;
+                    left: 4px;
+                    background-color: #494949;
+                    border-radius: 100px;
+                }
+                input {
+                    display: none;
+                }
+            }
+        }
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            li {
+                a {
+                    width: 200px;
+                    height: 289px;
+                    display: flex;
+                    flex-direction: column;
+                    text-decoration: none;
+                    text-align: center;
+                    margin-bottom: 48px;
+                    margin-right: 30px;
+                    & img {
+                        width: 200px;
+                        height: 200px;
+                    }
+                    & span {
+                        color: #000000;
+                        font-family: "Montserrat", sans-serif;
+                        font-size: px-to-rem(18);
+                        font-weight: 400;
+                        text-decoration: none;
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+    &__more {
+        margin: auto;
+        display: block;
+        color: #d21810;
+        font-family: "Montserrat", sans-serif;
+        font-size: px-to-rem(14);
+        font-weight: 500;
+        text-transform: uppercase;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding-right: 37px;
+    }
+    input:checked + &__body {
+        display: block;
+    }
+    &__slider {
+        max-width: 1091px;
+        margin: auto;
+        margin-top: 77px;
+        margin-bottom: 100px;
+        position: relative;
+        &-wrap {
+            position: relative;
+            max-width: 1091px;
+            margin: auto;
+            & p {
+                position: absolute;
+                bottom: -40px;
+                left: 150px;
+                color: #4d4d4d;
+                font-size: px-to-rem(16);
+                font-weight: 500;
+                line-height: 24px;
+            }
+        }
+        &-item {
+            max-width: 1091px;
+            max-height: 600px;
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .slick-arrow {
+            border: none;
+            background: url("../img/photo-arrow.svg") no-repeat;
+            width: 17px;
+            height: 33px;
+            background-size: 100% 100%;
+            color: transparent;
+            overflow: hidden;
+            cursor: pointer;
+            position: absolute;
+            left: -56px;
+            top: calc(50% - 16.5px);
+        }
+        & .slick-next {
+            left: auto;
+            right: -56px;
+            transform: rotate(180deg);
+        }
+        & .slick-dots {
+            position: absolute;
+            bottom: -40px;
+            left: 45px;
+            width: 100px;
+            height: 25px;
+            margin-bottom: 0;
+            list-style-type: none;
+            &::after {
+                content: "";
+            }
+            li {
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                pointer-events: none;
+                button {
+                    border: none;
+                    background: none;
+                    color: #999999;
+                    font-family: "Montserrat";
+                    font-size: px-to-rem(18);
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+                &::after {
+                    color: #999999;
+                    font-family: "Montserrat";
+                    font-size: px-to-rem(18);
+                    font-weight: 500;
+                    line-height: 24px;
+                    margin-left: 5px;
+                }
+            }
+            & .slick-active {
+                opacity: 1;
+            }
+        }
+    }
+}
+.wrapper-musician {
+    .header__nav-active {
+        &::after {
+            left: -18px;
+        }
+    }
+}
+.photo__slider-wrap-musician {
+    & .photo__slider {
+        margin-bottom: 110px;
+    }
+}
+@media (max-width: 1250px) {
+    .photo__slider-wrap-musician {
+        margin-bottom: 0;
+    }
+    .musician {
+        h1 {
+            font-size: px-to-rem(36);
+            line-height: 48px;
+            padding-left: 40px;
+            margin-bottom: 72px;
+        }
+        &__slider {
+            &-wrap {
+                max-width: 840px;
+            }
+            &-item {
+                max-height: 460px;
+            }
+        }
+        &__link-more {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        &__btn-more {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        &__text {
+            padding-left: 40px;
+            padding-right: 40px;
+            &-hide {
+                height: 2355px;
+            }
+            & img {
+                max-width: 100%;
+            }
+            &-slider {
+                & img {
+                    max-width: 306px;
+                }
+            }
+            &-box {
+                img {
+                    max-width: 460px;
+                }
+                p {
+                    max-width: 440px;
+                }
+            }
+        }
+        &__tabs {
+            padding-left: 40px;
+        }
+        &__body {
+            padding-left: 40px;
+            max-width: 980px;
+            &-filter {
+                &-letter {
+                    & button {
+                        &:last-child {
+                            margin-left: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .musician__body-filter-letter label {
+        margin-right: 5px;
+    }
+}
+@media (max-width: 1000px) {
+    .musician {
+        &__link-more {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        &__slider {
+            &-item {
+                max-height: 330px;
+            }
+            &-wrap {
+                max-width: 601px;
+                & p {
+                    left: 104px;
+                }
+            }
+            & .slick-dots {
+                left: 0;
+            }
+        }
+        &__text {
+            padding-left: 20px;
+            padding-right: 20px;
+            &-hide {
+                height: 2825px;
+            }
+            img {
+                margin-bottom: 100px;
+                max-width: 130%;
+                margin-left: -40px;
+            }
+            &-slider {
+                img {
+                    margin-left: 0;
+                    margin-right: 20px;
+                }
+            }
+            &-box {
+                flex-direction: column;
+                img {
+                    max-width: 100%;
+                    margin-bottom: 50px;
+                    margin-left: 0;
+                }
+                p {
+                    max-width: 100%;
+                }
+            }
+            &-slider {
+                margin-left: -20px;
+                margin-top: 100px;
+                width: 1205px;
+                & img {
+                    width: 387px;
+                }
+            }
+        }
+        &__filter-res {
+            display: block;
+            color: #000000;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(14);
+            font-weight: 500;
+            text-transform: uppercase;
+            background: none;
+            border: none;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        h1 {
+            margin-top: 227px;
+            margin-bottom: 64px;
+            padding-left: 20px;
+        }
+        &__tabs {
+            padding-left: 0;
+            margin-left: 20px;
+        }
+        &__body {
+            padding-left: 0;
+            margin-left: 20px;
+            &-list {
+                max-width: 460px;
+                margin: auto;
+            }
+            &-filter {
+                margin-bottom: 52px;
+                &-letter {
+                    padding-right: 50px;
+                    &-inner {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    button {
+                        height: 20.7px;
+                        margin-right: 30px;
+                        &:last-child {
+                            display: none;
+                        }
+                    }
+                    & label {
+                        margin-bottom: 10px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .musician {
+        h1 {
+            margin-top: 115px;
+        }
+        &__tabs {
+            flex-wrap: wrap;
+            & li {
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__body {
+            margin-left: 0;
+            &-filter {
+                &-genre {
+                    padding-left: 20px;
+                }
+                &-letter {
+                    padding-left: 20px;
+                }
+            }
+            &-list {
+                max-width: 200px;
+                & li {
+                    & a {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        &__text {
+            &-hide {
+                height: 3065px;
+            }
+        }
+        &__slider {
+            padding-left: 20px;
+            padding-right: 20px;
+            &-item {
+                height: 50vw !important;
+            }
+            & .slick-dots {
+                left: 20px;
+            }
+        }
+    }
+    .musician__filter-res {
+        padding-left: 20px;
+    }
+    .musician__more {
+        padding-right: 0;
+    }
+}

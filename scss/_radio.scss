@@ -1,0 +1,697 @@
+.wrapper-radio {
+    .header {
+        &__nav {
+            &-active {
+                &::after {
+                    content: url("../img/radio-cover.png");
+                    left: -17px;
+                }
+            }
+        }
+    }
+}
+.radio {
+    &-intro {
+        max-width: 1600px;
+        margin: auto;
+        height: 720px;
+        background: url("../img/backr.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            background-color: #000000;
+            opacity: 0.5;
+            display: block;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        &::before {
+            content: "";
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #000000 150%);
+            background-color: transparent;
+            width: 100%;
+            height: 103px;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        &__inner {
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 280px;
+            position: relative;
+            z-index: 1;
+            h1 {
+                color: #ffffff;
+                font-family: "Montserrat", sans-serif;
+                font-size: px-to-rem(32);
+                font-weight: 500;
+                line-height: 60px;
+                margin-bottom: 30px;
+            }
+            p {
+                color: rgb(196, 196, 196);
+                font-family: "Montserrat", sans-serif;
+                font-size: px-to-rem(16);
+                font-weight: 400;
+                line-height: 24px;
+                max-width: 500px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    max-width: 1200px;
+    &__program {
+        width: 550px;
+        background-color: rgb(239, 239, 239);
+        padding-top: 55px;
+        padding-left: 52px;
+        padding-bottom: 60px;
+        h3 {
+            color: #1a1a1a;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(24);
+            font-weight: 500;
+            line-height: 34px;
+            margin-bottom: 45px;
+        }
+        h4 {
+            color: #000000;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(16);
+            font-weight: 500;
+            line-height: 24px;
+            margin-bottom: 20px;
+            margin-top: 35px;
+            + p {
+                color: #4d4d4d;
+                font-family: "Montserrat", sans-serif;
+                font-size: px-to-rem(16);
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 15px;
+                & + ul {
+                    list-style-type: none;
+                    li {
+                        color: #4d4d4d;
+                        font-family: "Montserrat", sans-serif;
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 24px;
+                        &::before {
+                            content: "⬥";
+                            color: #999999;
+                            margin-left: 3px;
+                            font-size: 14px;
+                            margin-right: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__play {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 144px;
+        width: 530px;
+        &-program {
+            display: none;
+            & + .radio__program {
+                display: none;
+            }
+        }
+        &-links {
+            margin-top: 90px;
+            margin-left: 55px;
+            p {
+                color: #4d4d4d;
+                font-family: "Montserrat", sans-serif;
+                font-size: px-to-rem(16);
+                font-weight: 400;
+                line-height: 24px;
+                max-width: 357px;
+            }
+            ul {
+                list-style-type: none;
+                margin-top: 10px;
+                display: flex;
+                li {
+                    margin-right: 20px;
+                    a {
+                        color: #d21810;
+                        font-family: "Montserrat", sans-serif;
+                        font-size: px-to-rem(18);
+                        font-weight: 500;
+                        line-height: 24px;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        &-vidget {
+            position: relative;
+            width: 300px;
+            height: 445px;
+        }
+    }
+
+    /*=========================
+	Radio
+=========================*/
+    /* Big */
+    .b-radio-player__big {
+        float: left;
+        width: 300px;
+    }
+    .b-radio-player__big .jp-audio {
+        color: #dae5eb;
+        position: relative;
+
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+    }
+
+    .b-radio-player__big .jp-interface {
+        position: relative;
+        max-height: 445px;
+        height: 100%;
+    }
+
+    /* @group CONTROLS */
+    .b-radio-player__big .jp-controls-holder {
+        clear: both;
+        width: 440px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        top: -8px;
+    }
+
+    .b-radio-player__big .jp-controls {
+        padding: 0;
+        overflow: hidden;
+
+        position: absolute;
+        left: 0;
+    }
+
+    .b-radio-player__big .jp-player__bg {
+        text-align: center;
+    }
+    .b-radio-player__big .jp-player__bg img {
+        margin: 0;
+        max-height: 300px;
+
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+
+        max-width: 100%;
+        width: auto\9;
+        height: auto;
+        vertical-align: middle;
+        border: 0;
+    }
+
+    .b-radio-player__big .jp-controls button {
+        display: block;
+        cursor: pointer;
+        opacity: 1;
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+    .b-radio-player__big .jp-controls button:hover {
+        opacity: 1;
+    }
+    .b-radio-player__big .jp-play {
+        font-size: 4em;
+        color: #9f9f9f;
+        border: none;
+        background: none;
+        width: 55px;
+        height: 55px;
+        background: url("../img/f01d.png") no-repeat;
+        background-size: cover;
+    }
+
+    .b-radio-player__big .jp-state-playing .jp-play {
+        color: #da251d;
+    }
+    .b-radio-player__big .jp-state-playing .jp-play i::before {
+        content: "\f28c";
+    }
+    /* @end */
+    /* @group volume controls */
+    .b-radio-player__big .jp-volume-controls {
+        position: absolute;
+        bottom: 50px;
+        left: 140px;
+    }
+    .b-radio-player__big .jp-volume-controls button {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        font-size: 2.5em;
+
+        top: -18px;
+        left: -50px;
+    }
+
+    .b-radio-player__big .jp-mute {
+        color: #da251d;
+        background: url("../img/fld1.png") no-repeat;
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        border: none;
+    }
+
+    .b-radio-player__big .jp-state-muted .jp-mute {
+        color: #222;
+    }
+    .b-radio-player__big .jp-state-muted .jp-mute i:before {
+        content: "\f026";
+    }
+
+    .b-radio-player__big .jp-volume-bar {
+        position: absolute;
+        overflow: hidden;
+        background: #000000;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 5px;
+        cursor: pointer;
+    }
+
+    .b-radio-player__big .jp-volume-bar-value {
+        background: #da251d;
+        height: 100%;
+    }
+    /* @end */
+
+    /* @group current time and duration */
+    .b-radio-player__big .jp-audio .jp-time-holder {
+        position: absolute;
+        top: -65px;
+        right: 30px;
+        z-index: 1;
+        color: #da251d;
+    }
+
+    .b-radio-player__big .jp-current-time {
+        opacity: 0;
+        font-size: 1.75em;
+        font-style: oblique;
+
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+    .b-radio-player__big .jp-state-playing .jp-current-time {
+        opacity: 1;
+    }
+    /* @end */
+
+    /* @group playlist */
+    .b-radio-player__big .jp-controls__wrap {
+        position: relative;
+        height: 75px;
+    }
+    .b-radio-player__big .jp-details {
+        font-size: 1.15em;
+        margin-top: 10px;
+        text-align: center;
+        height: 70px;
+    }
+
+    .b-radio-player__big .jp-title {
+        margin: 0;
+        position: relative;
+
+        display: block;
+        color: #000;
+
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+    }
+    .b-radio-player__big .jp-description {
+        font-weight: bold;
+        font-size: 1.1em;
+        display: block;
+        color: #000;
+    }
+    .b-radio-player__big .jp-description a {
+        text-decoration: none;
+        color: #000;
+    }
+    .b-radio-player__big .jp-playlist ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0 20px;
+        font-size: 0.72em;
+    }
+    .b-radio-player__big .jp-playlist li div {
+        display: inline;
+    }
+
+    .b-radio-player__big .jp-jplayer audio,
+    .b-radio-player__big .jp-jplayer {
+        width: 0;
+        height: 0;
+    }
+
+    /* @group TOGGLES */
+    /* The audio toggles are nested inside jp-time-holder */
+    .b-radio-player__big .jp-toggles {
+        padding: 0;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .b-radio-player__big .jp-audio .jp-type-single .jp-toggles {
+        width: 25px;
+    }
+
+    .b-radio-player__big .jp-audio .jp-type-playlist .jp-toggles {
+        width: 55px;
+        margin: 0;
+        position: absolute;
+        left: 325px;
+        top: 50px;
+    }
+
+    .b-radio-player__big .jp-video .jp-toggles {
+        position: absolute;
+        right: 16px;
+        margin: 10px 0 0 0;
+        width: 100px;
+    }
+
+    .b-radio-player__big .jp-toggles button {
+        display: block;
+        float: left;
+        width: 25px;
+        height: 18px;
+        text-indent: -9999px;
+        line-height: 100%;
+
+        border: none;
+        cursor: pointer;
+    }
+
+    /* @end */
+    /* @group NO SOLUTION error feedback */
+    .b-radio-player__big .jp-no-solution {
+        padding: 5px;
+        font-size: 0.8em;
+        border: 2px solid #009be3;
+        color: #000;
+        display: none;
+    }
+    .b-radio-player__big .jp-no-solution a {
+        color: #000;
+    }
+    .fa-play-circle-o::before {
+        content: "\f01d";
+    }
+    .b-radio-player__big .jp-no-solution span {
+        font-size: 1em;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+    }
+    /* @end */
+}
+.podcast {
+    margin: auto;
+    margin-top: 20px;
+    max-width: 1200px;
+    h2 {
+        color: #1a1a1a;
+        font-family: "Montserrat", sans-serif;
+        font-size: px-to-rem(36);
+        font-weight: 500;
+        line-height: 48px;
+        margin-bottom: 50px;
+    }
+    &__tabs {
+        display: flex;
+        list-style-type: none;
+        margin-bottom: 80px;
+        &-label {
+            width: 108px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4d4d4d;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(18);
+            font-weight: 500;
+            line-height: 24px;
+            cursor: pointer;
+            &-active {
+                background: url("../img/radio-back.png") no-repeat;
+                background-size: 100% 100%;
+                color: #d21810;
+            }
+        }
+    }
+    &__list {
+        max-width: 1200px;
+        margin: auto;
+        display: none;
+        button {
+            color: #d21810;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(14);
+            font-weight: 500;
+            text-transform: uppercase;
+            margin: auto;
+            display: block;
+            border: none;
+            background: none;
+            margin-bottom: 171px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            margin-left: 100px;
+            margin-bottom: 97px;
+            color: #999999;
+            font-size: 14px;
+            li {
+                padding-left: 25px;
+                margin-bottom: 15px;
+                max-width: 827px;
+                font-weight: 500;
+                font-family: "Montserrat";
+                font-size: px-to-rem(14);
+                font-weight: 500;
+                line-height: 24px;
+                position: relative;
+                &::before {
+                    content: "⬥";
+                    position: absolute;
+                    left: 0;
+                }
+                a {
+                    color: #d21810;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: px-to-rem(18);
+                    font-weight: 500;
+                    line-height: 24px;
+                    text-decoration: none;
+                }
+                span {
+                    color: #4d4d4d;
+                    font-family: "Montserrat", sans-serif;
+                    font-size: px-to-rem(18);
+                    font-weight: 500;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+    & input {
+        display: none;
+        &:checked + .podcast__list {
+            display: block;
+        }
+    }
+}
+@media (max-width: 1250px) {
+    .radio {
+        &__program {
+            h4 {
+                margin-bottom: 30px;
+            }
+        }
+        &__play {
+            width: 445px;
+            align-items: flex-start;
+            margin-right: 29px;
+            &-vidget {
+                margin-left: 40px;
+            }
+            &-links {
+                margin-left: 40px;
+                ul {
+                    li {
+                        span,
+                        a {
+                            font-size: px-to-rem(14);
+                        }
+                    }
+                }
+            }
+        }
+        &-intro {
+            height: 550px;
+            &__inner {
+                padding-top: 253px;
+            }
+            h1 {
+                padding-left: 40px;
+                margin-bottom: 15px;
+            }
+            p {
+                max-width: 770px;
+                padding-left: 40px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .podcast {
+        h2 {
+            padding-left: 40px;
+            font-size: px-to-rem(30);
+        }
+        &__tabs {
+            padding-left: 40px;
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .radio {
+        &__program {
+            display: none;
+        }
+        &__play {
+            width: 100%;
+            margin-right: 0;
+            padding-right: 0;
+            &-vidget {
+                margin-left: 50px;
+            }
+            & .radio__program {
+                max-width: 550px;
+                width: 100%;
+                margin: auto;
+                padding-right: 50px;
+                margin-top: 45px;
+                h3 {
+                    cursor: pointer;
+                }
+            }
+            &-links {
+                margin-top: 94px;
+                margin-left: 50px;
+                ul li {
+                    span,
+                    a {
+                        font-size: px-to-rem(18);
+                    }
+                }
+            }
+            &-program {
+                display: block;
+                margin: auto;
+                margin-left: 50px;
+                margin-top: 100px;
+                color: #d21810;
+                font-family: "Montserrat", sans-serif;
+                font-size: px-to-rem(24);
+                font-weight: 500;
+                line-height: 34px;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+        }
+        &-intro {
+            height: 460px;
+            &__inner {
+                padding-top: 182px;
+                h1 {
+                    font-size: px-to-rem(36);
+                    padding-left: 20px;
+                    margin-bottom: 20px;
+                    line-height: 48px;
+                }
+                p {
+                    padding-left: 20px;
+                    font-size: px-to-rem(14);
+                    max-width: 520px;
+                    margin-bottom: 17px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+    .podcast {
+        button {
+            margin-bottom: 115px;
+        }
+        margin-top: 60px;
+        h2 {
+            padding-left: 50px;
+        }
+        &__tabs {
+            padding-left: 50px;
+        }
+        &__list {
+            ul {
+                margin-left: 50px;
+                padding-right: 50px;
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .radio {
+        &-intro {
+            height: auto;
+            padding-bottom: 10px;
+            &__inner {
+                padding-top: 82px;
+                h1 {
+                    font-size: px-to-rem(20);
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: px-to-rem(10);
+                    margin-bottom: 10px;
+                    line-height: 12px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,253 @@
+.header {
+    width: 100vw;
+    padding-top: 20px;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    &__nav {
+        &-close {
+            display: none;
+        }
+        &-active {
+            position: relative;
+            &::after {
+                position: absolute;
+                content: url("../img/header-item.png");
+                left: -10px;
+                top: -16px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__burger {
+        &-btn {
+            display: none;
+        }
+    }
+    &-fixed {
+        position: fixed;
+        height: 55px;
+        background-image: none;
+        background-color: rgba(26, 26, 26, 0.8);
+        padding-top: 0;
+        & .header__nav-active::after {
+            display: none;
+        }
+        & .header__logo {
+            height: 49px;
+            padding-top: 2px;
+        }
+        &:hover {
+            background-color: rgba(26, 26, 26, 1);
+        }
+    }
+    &__wrap {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    & nav ul {
+        display: flex;
+        list-style-type: none;
+        & li {
+            margin-right: 36px;
+            padding-top: 5px;
+            & a {
+                color: #ffffff;
+                font-size: px-to-rem(14);
+                font-weight: 500;
+                line-height: 30px;
+                text-transform: uppercase;
+                text-decoration: none;
+                &:hover {
+                    color: #d21810;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__logo {
+        width: 130px;
+        height: 83px;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        text-align: right;
+        a {
+            color: #ffffff;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(18);
+            font-weight: 500;
+            line-height: 30px;
+            text-decoration: none;
+            margin-left: auto;
+            & svg {
+                display: none;
+            }
+            &:hover {
+                color: #d21810;
+            }
+        }
+        p {
+            opacity: 0.6;
+            color: #ffffff;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(14);
+            font-weight: 400;
+            line-height: 10px;
+        }
+    }
+}
+@media (max-width: 1220px) {
+    .header {
+        padding-left: 40px;
+        padding-right: 40px;
+        &-fixed {
+            & .header__logo {
+                width: 78px;
+            }
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .header {
+        padding-left: 27px;
+        padding-right: 27px;
+        padding-top: 0;
+        position: fixed;
+        &__logo {
+            height: 55px;
+        }
+        &-fixed {
+            padding-top: 0;
+            background-color: rgba(26, 26, 26, 1);
+
+            & .header__burger-btn {
+                margin-left: 52px;
+                padding-top: 0;
+            }
+            & .header__contacts a {
+                padding-top: 0;
+            }
+        }
+        &__nav {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #ffffff;
+            &-active {
+                color: #d21810 !important;
+                &::after {
+                    display: none;
+                }
+            }
+            &-show {
+                display: block;
+            }
+            &-close {
+                display: block;
+                border: none;
+                background: none;
+                margin: auto;
+                margin-top: 20px;
+                cursor: pointer;
+                width: 70px;
+                height: 70px;
+                & img {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+        & nav {
+            ul {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 55px;
+                & li {
+                    margin-right: 0;
+                    & a {
+                        color: #000000;
+                        font-size: px-to-rem(14);
+                        &:hover {
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+        &__burger-btn {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-family: "Montserrat", sans-serif;
+            font-size: px-to-rem(14);
+            font-weight: 500;
+            line-height: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+            & img {
+                margin-right: 10px;
+            }
+        }
+        &__contacts {
+            & p {
+                display: none;
+            }
+            & a {
+                width: 130px;
+                display: flex;
+                text-align: right;
+                justify-content: right;
+                & span {
+                    display: none;
+                }
+                & svg {
+                    display: block;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+    .header-fixed .header__logo {
+        width: 70px;
+        height: 55px;
+        padding-top: 0;
+    }
+}
+@media (max-width: 600px) {
+    .header,
+    .header-fixed {
+        &__logo {
+            width: 70px;
+        }
+        &__contacts {
+            a {
+                width: 70px;
+            }
+        }
+        &-fixed {
+            & .header__burger-btn {
+                margin-left: 0;
+            }
+        }
+    }
+}
